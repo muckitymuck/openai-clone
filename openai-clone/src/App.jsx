@@ -10,7 +10,7 @@ function App() {
   const configuration = new Configuration({
      //apiKey: import.meta.env.VITE_Open_AI_Key,
      //apiKey: process.env.VITE_Open_AI_Key,
-     apiKey: OPEN_AI_KEY,
+     apiKey: 'OPENAIKEY',
   })
 
   const openai = new OpenAIApi(configuration)
@@ -28,6 +28,7 @@ function App() {
     const response = await openai.createCompletion(object);
 
     setResult(response.data.choices[0].text);
+    console.log(response)
   };
   
 
